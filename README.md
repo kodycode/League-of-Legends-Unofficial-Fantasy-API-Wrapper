@@ -19,7 +19,7 @@ Currently no setup script yet. For the moment you can move the folder to your si
 
 **Get Fantasy Names**
 
-Returns the name of the fantasy league
+* Returns the name of the fantasy league
 
 ```python
 >>> test.get_fantasy_name()
@@ -30,7 +30,7 @@ test
 
 **Get Fantasy Size**
 
-Returns the number of teams in the fantasy league
+* Returns the number of teams in the fantasy league
 
 ```python
 >>> test.get_fantasy_size()
@@ -41,7 +41,7 @@ Returns the number of teams in the fantasy league
 
 **Get Current Week**
 
-Returns the current week number in the fantasy league
+* Returns the current week number in the fantasy league
 
 ```python
 >>> test.get_current_week()
@@ -52,7 +52,7 @@ Returns the current week number in the fantasy league
 
 **Get Fantasy Status**
 
-Returns the status of the fantasy league
+* Returns the status of the fantasy league
 
 ```python
 >>> test.get_fantasy_status()
@@ -63,7 +63,7 @@ IN_SEASON
 
 **Get Fantasy Game Mode**
 
-Returns the mode of what games count towards fantasy. (Results vary, it could be BEST_1 (Best of 1), ALL (All games), etc..)
+* Returns the mode of what games count towards fantasy. (Results vary, it could be BEST_1 (Best of 1), ALL (All games), etc..)
 
 ```python
 >>> test.get_games_counted()
@@ -74,7 +74,7 @@ ALL
 
 **Get Fantasy Point Format**
 
-Returns a dictionary of stats with how many points counted per stat
+* Returns a dictionary of stats with how many points counted per stat
 
 ```python
 >>> test.get_points_per_stat()
@@ -102,7 +102,7 @@ Returns a dictionary of stats with how many points counted per stat
 
 **Get Fantasy Teams**
 
-Returns a list of fantasy teams
+* Returns a list of fantasy teams
 
 ```python
 >>> test.get_fantasy_teams()
@@ -129,7 +129,7 @@ Returns a list of fantasy teams
 
 **Get Fantasy Matches**
 
-Returns a list of all the fantasy matches
+* Returns a list of all the fantasy matches
 
 ```python
 >>> test.get_fantasy_matches()
@@ -208,7 +208,7 @@ Returns a list of all the fantasy matches
 
 **Get Fantasy Roster Updates**
 
-Returns a list of all the roster updates
+* Returns a list of all the roster updates
 
 ```python
 >>> test.get_fantasy_roster_updates()
@@ -231,7 +231,7 @@ Returns a list of all the roster updates
 
 **Get Fantasy Trades Created**
 
-Returns a list of all the trades made
+* Returns a list of all the trades made
 
 (Example below taken from a different fantasy league)
 
@@ -274,7 +274,7 @@ Returns a list of all the trades made
 
 **Get Fantasy Roster Posession Limits**
 
-Returns the number limit of the roles you're allowed to have
+* Returns the number limit of the roles you're allowed to have
 
 ```python
 >>> test.get_fantasy_roster_limits()
@@ -295,7 +295,7 @@ Returns the number limit of the roles you're allowed to have
 **Get Fantasy Role Posession Limit**
 
 
-Returns the number limit of the same role you're allowed to have
+* Returns the number limit of the same role you're allowed to have
 
 ```python
 >>> test.get_fantasy_role_limit()
