@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='fantasyleague',
-    version='1.0.0',
+    version='1.1.0',
     url='https://github.com/kodycode/Fantasy-LCS-API-Wrapper',
     author='Kody Thach',
     license='MIT License',
