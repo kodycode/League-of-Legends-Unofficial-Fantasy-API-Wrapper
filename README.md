@@ -10,6 +10,15 @@ Currently no setup script yet. For the moment you can move the folder to your si
 
 **Initialization**
 
+* Class `FantasyLeague` takes in the following params:
+
+	- Region (i.e. na)
+	- Fantasy League ID (you can typically find this at the end of the url when you visit your fantasy league homepage)
+
+The regions that the API supports is what lolesports is shown to display for fantasy options which is the following regions:
+
+`na, lan, las, euw, eune, oce`
+
 ```python
 >>> from fantasyleague import FantasyLeague
 >>> test = FantasyLeague("na", 1)
