@@ -4,9 +4,13 @@ Created an unofficial Fantasy LCS API in Python 3.6.
 
 # Installation
 
-Currently no setup script yet. For the moment you can move the folder to your site packages or move it locally to your working directory.
+Run the following command in your terminal from the source:
+
+```python setup.py install```
 
 # Documentation
+
+Data used from https://fantasy.na.lolesports.com/en-US/league/1
 
 **Initialization**
 
@@ -32,7 +36,7 @@ The regions that the API supports is what lolesports is shown to display for fan
 
 ```python
 >>> test.get_fantasy_name()
-test
+'test'
 ```
 
 ----------
@@ -65,7 +69,7 @@ test
 
 ```python
 >>> test.get_fantasy_status()
-IN_SEASON
+'IN_SEASON'
 ```
 
 ----------
@@ -76,7 +80,7 @@ IN_SEASON
 
 ```python
 >>> test.get_games_counted()
-ALL
+'ALL'
 ```
 
 ----------
