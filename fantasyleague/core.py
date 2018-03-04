@@ -20,6 +20,9 @@ class FantasyLeague:
     def _get_fantasy_data(self, region, fantasy_league_id):
         """
         Returns data of fantasy league
+
+        @param region - region that fantasy league exists in
+        @param fantasy_league_id - id of the fantasy league to search for
         """
         try:
             region = region.lower()
