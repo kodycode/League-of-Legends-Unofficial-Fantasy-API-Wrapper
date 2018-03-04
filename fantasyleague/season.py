@@ -13,7 +13,7 @@ class SeasonDataException(Exception):
 
 
 class SeasonData:
-    """Handles Player Stat requests"""
+    """Handles Season Data requests"""
 
     def __init__(self, region, season):
         self.season_data = self._get_season_data(region, int(season))
