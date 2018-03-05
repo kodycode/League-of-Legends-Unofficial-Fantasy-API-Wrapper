@@ -1,6 +1,6 @@
 # Fantasy LCS API Wrapper
 
-Created an unofficial Fantasy LCS API in Python 3.6.
+Created a Fantasy LCS API in Python 3.6.
 
 # Installation
 
