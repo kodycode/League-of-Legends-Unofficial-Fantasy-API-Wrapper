@@ -73,7 +73,7 @@ class PlayerStats:
         except Exception as e:
             error_msg = ("Failed to retrieve player match data: {}"
                          "".format(str(e)))
-            raise SeasonDataException(error_msg)
+            raise PlayerDataException(error_msg)
 
     def get_all_match_stats(self):
         """
@@ -84,7 +84,7 @@ class PlayerStats:
         except Exception as e:
             error_msg = ("Failed to retrieve all match stats: {}"
                          "".format(str(e)))
-            raise SeasonDataException(error_msg)
+            raise PlayerDataException(error_msg)
 
     def get_match_stats(self, match_number):
         """
@@ -102,4 +102,4 @@ class PlayerStats:
         except Exception as e:
             error_msg = ("Failed to retrieve match stats: {}"
                          "".format(str(e)))
-            raise SeasonDataException(error_msg)
+            raise PlayerDataException(error_msg)
