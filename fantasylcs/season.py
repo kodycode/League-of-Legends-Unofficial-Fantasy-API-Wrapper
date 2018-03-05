@@ -51,36 +51,40 @@ class SeasonData:
 class PlayerData:
     """Handles Player Data requests"""
 
-    def __init__(self, season, player_id):
+    def __init__(self, season, player):
         self.season_data = season.season_data
-        self.profile_data = self._get_profile(player_id)
-        self.match_data = self._get_match_data(player_id)
+        self.profile_data = self._get_profile(player)
+        self.match_data = self._get_match_data()
 
-    def _get_profile(self, player_id):
+    def _get_profile(self, player):
         """
         Returns profile data of the player
 
-        @param player_id - id of the player to look up
+        @param player - id or name of the player to look up
         """
         try:
+            try:
+                player = int(player)
+            except ValueError:
+                player = player.lower()
             player_list = self.season_data["proPlayers"]
-            for player in player_list:
-                if player["id"] == player_id:
-                    return player
+            for p in player_list:
+                if p["id"] == player:
+                    return p
+                if p["name"].lower() == player:
+                    return p
         except Exception as e:
             error_msg = ("Failed to retrieve player profile data: {}"
                          "".format(str(e)))
             raise PlayerDataException(error_msg)
 
-    def _get_match_data(self, player_id):
+    def _get_match_data(self):
         """
         Returns match data related to player
-
-        @param player_id - id of the player to look up
         """
         try:
             match_data = []
-            player_id = int(player_id)
+            player_id = self.profile_data["id"]
             matches = self.season_data["stats"]["actualPlayerStats"]
             for match in matches:
                 if player_id == match[0]:
