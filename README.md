@@ -13,10 +13,12 @@ Run the following command in your terminal from the source:
 ### Table of Contents:
 * [FantasyLeague documentation](https://github.com/kodycode/Fantasy-LCS-API-Wrapper/wiki/FantasyLeague)
     * Obtains general data from the specified fantasy league
-* [PlayerData documentation](https://github.com/kodycode/Fantasy-LCS-API-Wrapper/wiki/PlayerData)
-    * Obtains the player's seasonal data
 * [SeasonData documentation](https://github.com/kodycode/Fantasy-LCS-API-Wrapper/wiki/SeasonData)
     * Obtains data of the fantasy season so far
+* [PlayerData documentation](https://github.com/kodycode/Fantasy-LCS-API-Wrapper/wiki/PlayerData)
+    * Obtains the player's seasonal data
+* [TeamData documentation](https://github.com/kodycode/Fantasy-LCS-API-Wrapper/wiki/TeamData)
+    * Obtains the team's seasonal data
 
 
 # Donations
