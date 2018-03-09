@@ -79,6 +79,17 @@ class TeamData:
                          "".format(str(e)))
             raise TeamDataException(error_msg)
 
+    def get_region(self):
+        """
+        Returns the region of the team
+        """
+        try:
+            return self.profile_data["league"]
+        except Exception as e:
+            error_msg = ("Failed to retrieve region: {}"
+                         "".format(str(e)))
+            raise TeamDataException(error_msg)
+
     def get_positions(self):
         """
         Returns a list of all the team's positions
