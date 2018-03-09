@@ -89,7 +89,6 @@ class PlayerData:
             for match in matches:
                 if player_id == match[0]:
                     match_data.append(match)
-            match_data.sort(key=lambda x: x[2])  # sort by match id
             return match_data
         except Exception as e:
             error_msg = ("Failed to retrieve player match data: {}"
