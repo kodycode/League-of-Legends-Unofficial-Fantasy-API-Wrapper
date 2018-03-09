@@ -7,7 +7,7 @@ __author__ = 'Kody Thach'
 __repo__ = 'https://github.com/kodycode/League-of-Legends-Fantasy-API-Wrapper'
 __license__ = 'MIT License'
 
-from .core import FantasyLeague
+from .league import FantasyLeague
 from .season import SeasonData
 from .player import PlayerData
 from .team import TeamData
