@@ -40,7 +40,6 @@ class TeamData:
             for match in matches:
                 if team_id == match[0]:
                     match_data.append(match)
-            match_data.sort(key=lambda x: x[1])  # sort by match id
             return match_data
         except Exception as e:
             error_msg = ("Failed to retrieve team match data: {}"
