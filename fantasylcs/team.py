@@ -17,7 +17,10 @@ class TeamData:
         @param team - id or name of the team to look up
         """
         try:
-            team = team.lower()
+            try:
+                team = int(team)
+            except ValueError:
+                team = team.lower()
             team_list = self.season_data["proTeams"]
             for t in team_list:
                 if t["id"] == team:
