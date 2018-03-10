@@ -9,6 +9,7 @@ class PlayerData:
         self.season_data = season.season_data
         self.profile_data = self._get_profile(player)
         self.match_data = self._get_match_data()
+        self.projected_data = self._get_projected_data()
 
     def _get_profile(self, player):
         """
@@ -40,6 +41,23 @@ class PlayerData:
             match_data = []
             player_id = self.profile_data["id"]
             matches = self.season_data["stats"]["actualPlayerStats"]
+            for match in matches:
+                if player_id == match[0]:
+                    match_data.append(match)
+            return match_data
+        except Exception as e:
+            error_msg = ("Failed to retrieve player match data: {}"
+                         "".format(str(e)))
+            raise PlayerDataException(error_msg)
+
+    def _get_projected_data(self):
+        """
+        Returns projected match data related to player
+        """
+        try:
+            match_data = []
+            player_id = self.profile_data["id"]
+            matches = self.season_data["stats"]["projectedPlayerStats"]
             for match in matches:
                 if player_id == match[0]:
                     match_data.append(match)
@@ -162,6 +180,37 @@ class PlayerData:
                                 "{}".format(match_number))
             match_stats = self.match_data[match_number]
             return match_stats
+        except Exception as e:
+            error_msg = ("Failed to retrieve match stats: {}"
+                         "".format(str(e)))
+            raise PlayerDataException(error_msg)
+
+    def get_all_projected_stats(self):
+        """
+        Returns a list of all projected matches to be played by
+        the player
+        """
+        try:
+            return self.projected_data
+        except Exception as e:
+            error_msg = ("Failed to retrieve all projected stats: {}"
+                         "".format(str(e)))
+            raise PlayerDataException(error_msg)
+
+    def get_projected_stats(self, match_number):
+        """
+        Returns projected stats of a player given a number in a range
+        from the first match to the most recent match
+
+        @param match_number - # of the match to get
+        """
+        try:
+            projected_number = int(match_number)
+            if not 0 <= projected_number < len(self.projected_data):
+                raise Exception("Specified number is out of the match range: "
+                                "{}".format(match_number))
+            projected_stats = self.projected_data[match_number]
+            return projected_stats
         except Exception as e:
             error_msg = ("Failed to retrieve match stats: {}"
                          "".format(str(e)))
