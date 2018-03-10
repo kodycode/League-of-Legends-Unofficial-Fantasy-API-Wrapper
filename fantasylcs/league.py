@@ -39,7 +39,7 @@ class FantasyLeague:
                          "".format(str(e)))
             raise FantasyLeagueException(error_msg)
 
-    def get_id(self):
+    def get_fantasy_id(self):
         """
         Returns the fantasy league id
         """
