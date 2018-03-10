@@ -16,11 +16,11 @@ class SeasonData:
     """Handles Season Data requests"""
 
     def __init__(self, region, season):
-        self.season_data = self._get_season_data(region, int(season))
+        self.season_data = self._fetch_season_data(region, int(season))
 
-    def _get_season_data(self, region, season):
+    def _fetch_season_data(self, region, season):
         """
-        Returns season data
+        Returns fetched season data
 
         @param region - region that fantasy season exists in
         @param season - fantasy lcs season number
@@ -40,6 +40,17 @@ class SeasonData:
             return data.json()
         except Exception as e:
             error_msg = ("Failed to retrieve fantasy season data: {}"
+                         "".format(str(e)))
+            raise SeasonDataException(error_msg)
+
+    def get_season_data(self):
+        """
+        Returns season data
+        """
+        try:
+            return self.season_data
+        except Exception as e:
+            error_msg = ("Failed to retrieve season data: {}"
                          "".format(str(e)))
             raise SeasonDataException(error_msg)
 

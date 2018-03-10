@@ -6,12 +6,11 @@ class PlayerData:
     """Handles Player Data requests"""
 
     def __init__(self, season, player):
-        self.season_data = season.season_data
-        self.profile_data = self._get_profile(player)
-        self.match_data = self._get_match_data()
-        self.projected_data = self._get_projected_data()
+        self.profile_data = self._get_profile(season, player)
+        self.match_data = self._get_match_data(season)
+        self.projected_data = self._get_projected_data(season)
 
-    def _get_profile(self, player):
+    def _get_profile(self, season, player):
         """
         Returns profile data of the player
 
@@ -22,7 +21,7 @@ class PlayerData:
                 player = int(player)
             except ValueError:
                 player = player.lower()
-            player_list = self.season_data["proPlayers"]
+            player_list = season.get_season_data()["proPlayers"]
             for p in player_list:
                 if p["id"] == player:
                     return p
@@ -33,14 +32,14 @@ class PlayerData:
                          "".format(str(e)))
             raise PlayerDataException(error_msg)
 
-    def _get_match_data(self):
+    def _get_match_data(self, season):
         """
         Returns match data related to player
         """
         try:
             match_data = []
             player_id = self.profile_data["id"]
-            matches = self.season_data["stats"]["actualPlayerStats"]
+            matches = season.get_season_data()["stats"]["actualPlayerStats"]
             for match in matches:
                 if player_id == match[0]:
                     match_data.append(match)
@@ -50,14 +49,14 @@ class PlayerData:
                          "".format(str(e)))
             raise PlayerDataException(error_msg)
 
-    def _get_projected_data(self):
+    def _get_projected_data(self, season):
         """
         Returns projected match data related to player
         """
         try:
             match_data = []
             player_id = self.profile_data["id"]
-            matches = self.season_data["stats"]["projectedPlayerStats"]
+            matches = season.get_season_data()["stats"]["projectedPlayerStats"]
             for match in matches:
                 if player_id == match[0]:
                     match_data.append(match)
