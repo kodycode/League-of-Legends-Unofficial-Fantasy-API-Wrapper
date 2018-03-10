@@ -12,10 +12,6 @@ class SeasonDataException(Exception):
     """Handles SeasonData Exceptions"""
 
 
-class PlayerDataException(Exception):
-    """Handles PlayerData Exceptions"""
-
-
 class SeasonData:
     """Handles Season Data requests"""
 

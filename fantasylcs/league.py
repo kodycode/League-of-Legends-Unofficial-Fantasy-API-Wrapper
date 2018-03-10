@@ -39,6 +39,17 @@ class FantasyLeague:
                          "".format(str(e)))
             raise FantasyLeagueException(error_msg)
 
+    def get_id(self):
+        """
+        Returns the fantasy league id
+        """
+        try:
+            return self.data["id"]
+        except Exception as e:
+            error_msg = ("Failed to retrieve id of fantasy league: {}"
+                         "".format(str(e)))
+            raise FantasyLeagueException(error_msg)
+
     def get_fantasy_name(self):
         """
         Returns the name of the fantasy league
@@ -70,6 +81,18 @@ class FantasyLeague:
         except Exception as e:
             error_msg = ("Failed to retrieve current week of the "
                          "fantasy league: {}".format(str(e)))
+            raise FantasyLeagueException(error_msg)
+
+    def get_ignored_weeks(self):
+        """
+        Returns the total number of weeks ignored in the
+        fantasy league
+        """
+        try:
+            return self.data["ignoredWeeks"]
+        except Exception as e:
+            error_msg = ("Failed to retrieve count of ignored weeks: "
+                         "{}".format(str(e)))
             raise FantasyLeagueException(error_msg)
 
     def get_fantasy_status(self):
@@ -172,4 +195,17 @@ class FantasyLeague:
         except Exception as e:
             error_msg = ("Failed to retrieve position limit of fantasy "
                          "league: {}".format(str(e)))
+            raise FantasyLeagueException(error_msg)
+
+    def get_predraft_phase(self):
+        """
+        Returns predraft phase
+        True if league still needs to draft
+        False if players already drafted
+        """
+        try:
+            return self.data["predraft"]
+        except Exception as e:
+            error_msg = ("Failed to retrieve predraft phase: "
+                         "{}".format(str(e)))
             raise FantasyLeagueException(error_msg)
