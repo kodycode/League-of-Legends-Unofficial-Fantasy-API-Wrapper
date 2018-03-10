@@ -95,6 +95,7 @@ class SeasonData:
     def get_all_roster_locks(self):
         """
         Returns a dict of the times when rosters get locked in
+        for the week
         """
         try:
             return self.season_data["rosterLocksByWeek"]
