@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='fantasylcs',
-    version='1.2',
+    version='1.2.1',
     url='https://github.com/kodycode/Fantasy-LCS-API-Wrapper',
     author='Kody Thach',
     license='MIT License',
