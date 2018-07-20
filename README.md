@@ -6,7 +6,7 @@ Created a Fantasy LCS API in Python 3.6.
 
 Run the following command in your terminal from the source:
 
-```python setup.py install```
+```pip install fantasylcs```
 
 # Documentation
 
