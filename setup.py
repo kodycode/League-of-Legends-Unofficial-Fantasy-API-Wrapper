@@ -13,5 +13,5 @@ setup(
     description='An unofficial FantasyLCS API Wrapper.',
     long_description=open('README.md', 'r').read(),
     long_description_content_type='text/markdown',
-    install_requires=['requests==2.18.4'],
+    install_requires=['requests==2.20.0'],
 )
